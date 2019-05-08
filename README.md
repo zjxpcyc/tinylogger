@@ -1,14 +1,17 @@
 # tinylogger
-一个轻量到极致的日志记录器, 只有简单的 Info 与 Error 方法.
+一个轻量到极致的日志记录器。 自带一个简单的 Info 与 Error 的记录器, 输出到标准输出. 当然也可以自定义。
 
 主要适用的场景应该是在一些小辅助工具的编写上。
+
+![](https://img.shields.io/badge/golang-v0.0.1-blue.svg)
+![](https://img.shields.io/github/license/zjxpcyc/tinylogger.svg)
 
 ## 安装与使用
 
 **安装**
 ```golang
-
-go get github.com/zjxpcyc/tinylogger
+// x.y.z 为版本号
+go get github.com/zjxpcyc/tinylogger@vx.y.x
 ```
 
 **使用**
@@ -21,7 +24,7 @@ var l tinylogger.LogService = tinylogger.NewLogger()
 // 下面是示例写入文件
 f, _ := os.OpenFile("test.log", os.O_RDWR|os.O_CREATE, 0755)
 defer f.close()
-12 := tinylogger.NewLogger(f)
+l2 := tinylogger.NewLogger(f)
 
 // 调用方式
 // Info
